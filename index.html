@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/4db3f232fb.js"></script>
+    <title>ProductMarket</title>
+</head>
+<body>
+    <header>
+        <div class="Barra">
+        <div class="contenedor">
+            <div class="logo">
+                <img class="w-31 h-20" src="image.png" alt="">
+            </div>
+           
+                <div class="head">
+                    <a href="">Inicio</a>
+                <a href="">Vender</a>
+                <a href="">Compra</a>
+                <a href="">Precios</a>
+                </div>
+            
+            <div>
+                <button class="bg-green-500 text-white px-5 p-3 rounded-lg">
+                    Iniciar Seccion
+                  </button>
+            </div>
+        </div>
+     </div>
+     <div class="contenidoFonImg">
+        <div class="imgfon">
+            <div class="textencabe">
+                <h2>Welcome to ProductMarket </h2>
+                    <a href="#"  class="bg-green-500 text-white px-5 p-3 rounded-lg"> Siguiente</a>
+            </div>
+            <video autoplay loop muted>
+                <source src="MicrosoftTeams-video (1).mp4">
+            </video>
+        </div>
+     </div>
+     <section>
+        <div class="buscar">
+            <input type="text" placeholder="Buscar..">
+            <button class="but" type="button">Buscar</button>
+
+        </div>
+     </section>
+     <section>
+
+
+        <main class="products continer" id="lista-1"></main>
+            <h2 class="h1">Productos</h2>
+            <div class="product-content">
+                <div class="product">
+                    <img src="img/imagen (3).png" alt="">
+                    <div class="product-txt">
+                        <h3>ROSAMAR</h3>
+                        <p class="precio">$200.00</p>
+                        <button><i class="fas fa-shopping-basket"></i>Comprar</button>
+                        
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/imagen (9).png" alt="">
+                <div class="product-txt">
+                    <h3>Marfit</h3>
+                    <p class="precio">$33.30</p>
+                    <button><i class="fas fa-shopping-basket"></i>Comprar</button>
+                    
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/imagen (5).png" alt="">
+            <div class="product-txt">
+                <h3>Relot</h3>
+                <p class="precio">$80.00</p>
+                <button><i class="fas fa-shopping-basket"></i>Comprar</button>
+                
+        </div>
+    </div>
+    <div class="product">
+        <img src="img/imagen (6).png" alt="">
+        <div class="product-txt">
+            <h3>RERR</h3>
+            <p class="precio">$500.00</p>
+            <button><i class="fas fa-shopping-basket"></i>Comprar</button>
+            
+    </div>
+</div>
+<div class="product">
+    <img src="img/imagen (7).png" alt="">
+    <div class="product-txt">
+        <h3>cre</h3>
+        <p class="precio">$798.00</p>
+        <button><i class="fas fa-shopping-basket"></i>Comprar</button>
+        
+</div>
+</div>
+<div class="product">
+    <img src="img/imagen (8).png" alt="">
+    <div class="product-txt">
+        <h3>RTY</h3>
+        <p class="precio">$299.99</p>
+        <button><i class="fas fa-shopping-basket"></i>Comprar</button>
+        
+</div>
+</div>
+        </div>  
+
+        </main>
+     </section>
+   </header> 
+   <form>
+    <label for="usernema">Usuario</label>
+    <input type="text" id="usernema" placeholder="Ejemplo" required>
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <dir class="box-visible">
+        <input type="checkbox" id="visible">
+        <label for="visible">Mostrar contraseña</label>
+    </dir>
+    <button type="submit" id="submit">Iniciar seccion</button>
+   </form>
+   
+
+
+
+<body class="bg-gray-100 p-10"></body>
+<div class="container mx-auto">
+    <h1 class=" text-3xl mb-4 font-bold">PUBLICAR UN PRODUCTO</h1>
+    <form id="crudForm" class="bg-white p-6 rounded ">
+    <div class="mb-4">
+        <label class="block text-gray-700" for="name">Nombre</label>
+        <input class="border border-gray-300 p-2 rounded w-full" type="text" id="name">
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700"  for="lastName">Marca</label>
+        <input class="border border-gray-300 p-2 rounded w-full" type="text" id="lastName">
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700"  for="phone">Precio</label>
+        <input  class="border border-gray-300 p-2 rounded w-full" type="text" id="phone">
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700"  for="img">Imagen</label>
+        <input  class="border border-gray-300 p-2 rounded w-full" type="text" id="img">
+    </div>
+
+    <button class="bg-blue-500 text-white px-4 p-2 rounded" type="submit">Publicar</button>
+
+    </form>
+    
+    <table class="min-w-full bg-white shadow-md rounded-lg ">
+        <thead>
+            <tr>
+                <th class="py-2 px-4 bg-gray-200">Nombre</th>
+                <th class="py-2 px-4 bg-gray-200">Marca</th>
+                <th class="py-2 px-4 bg-gray-200">Precio</th>
+                <th class="py-2 px-4 bg-gray-200">Imagen</th>
+            </tr>
+        </thead>
+        <tbody id="dataTable">
+           
+        </tbody>
+    </table>
+    <footer class="piedepagi">
+        <div class="grup-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="imagen (1)-Photoroom.png" alt="logo">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>¿Qué es?</h2>
+                <p>Venta</p>
+                <p>Compra</p>
+                <p>Servicio</p>
+            </div>
+            <div class="box">
+                <h2>Más informacion </h2>
+                <p>al</p>
+                <p>73955909</p>
+                
+            </div>
+            
+            <div class="box">
+                <h2>Siguenos</h2>
+                <div class="redsocial">
+                    <a href="https://x.com/" class="fa fa-twitter"></a>
+                    <a href="https://es-la.facebook.com/" class="fa fa-facebook"></a>
+                    <a href="https://web.whatsapp.com/" class="fa fa-whatsapp"></a>
+                    <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                </div>
+            
+            </div>
+        </div>
+     </footer>
+</div> 
+</body>
+   
+
+</html>
+</body>
