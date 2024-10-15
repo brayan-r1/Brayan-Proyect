@@ -1,36 +1,102 @@
-const apiUrl = 'https://api.sheetbest.com/sheets/605fcc8e-b9c7-4275-a203-74938ee3f58e'
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-const form = document.getElementById('crudForm');
-const dataTable = document.getElementById('dataTable');
-
-
-
-const getData = async () => {
-    try {
-        const response = await axios.get(apiUrl);
-        renderTable(response.data);
-    } catch (error) {
-        console.error('Error al obtener los datos', error);
+    if (username === "admin" && password === "1234") {
+        alert("Inicio de sesión exitoso");
+    } else {
+        alert("Usuario o contraseña incorrectos");
     }
 }
 
-const renderTable = (data) => {
-    console.log(data);
-    dataTable.innerHTML = '';
-    data.forEach(item => {
-        const row = `
-<tr class="border-b"></tr>
-        <td class="py-2 px-4">${item.name}</td>
-        <td class="py-2 px-4">${item.marca}</td>
-        <td class="py-2 px-4">${item.precio}</td>
-        <td class="py-2 px-4"><img class="w-16 h-16 object-cover rounded" src="${item.img}" alt=""></td>
-        <td>
-            <button class="bg-yellow-500 text-withe px-2 py-1 rounded" onclick="">Editar</button>
-            <button class="bg-red-500 text-withe px-2 py-1 rounded" onclick="">Eliminar</button>
-        </td>
-        </tr>`;
-        dataTable.insertAdjacentHTML('beforeend', row);
+const productos = [
+    "ROSAMAR",
+    "Marfit",
+    "Relot",
+    "RERR",
+    "RTY"
+];
+
+function filtrarProductos() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const resultsList = document.getElementById('resultsList');
+    resultsList.innerHTML = '';
+
+    productos.forEach(producto => {
+        if (producto.toLowerCase().includes(searchInput)) {
+            const li = document.createElement('li');
+            li.textContent = producto;
+            resultsList.appendChild(li);
+        }
     });
 }
 
-getData();
+document.getElementById('postForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const postTitle = document.getElementById('postTitle').value.trim();
+    const postContent = document.getElementById('postContent').value.trim();
+    const postImage = document.getElementById('postImage').files[0];
+
+    if (postTitle && postContent) {
+        const messagesList = document.getElementById('messagesList');
+        const newMessage = document.createElement('li');
+
+        newMessage.innerHTML = `<strong>${postTitle}</strong>: ${postContent}`;
+
+        if (postImage) {
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(postImage);
+            newMessage.appendChild(img);
+        }
+
+        messagesList.appendChild(newMessage);
+
+        
+        document.getElementById('postTitle').value = '';
+        document.getElementById('postContent').value = '';
+        document.getElementById('postImage').value = '';
+
+        
+        alert('La publicación fue exitosa');
+    } else {
+        alert('Por favor, completa todos los campos antes de publicar.');
+    }
+});
+
+document.getElementById('payment-form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const cardNumber = document.getElementById('cardNumber').value;
+    const expiryDate = document.getElementById('expiryDate').value;
+    const cvv = document.getElementById('cvv').value;
+    const amount = document.getElementById('amount').value;
+
+    if (cardNumber && expiryDate && cvv && amount) {
+        document.getElementById('paymentStatus').innerText = 'Payment Successful!';
+    } else {
+        document.getElementById('paymentStatus').innerText = 'Please fill all fields.';
+    }
+});
+
+
+const cart = [];
+const totalPriceElement = document.getElementById('total-price');
+const cartModal = document.getElementById('cart-modal');
+const showCartButton = document.getElementById('show-cart');
+const closeButton = document.querySelector('.close');
+
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        const productElement = button.closest('.product');
+        const productName = productElement.getAttribute('data-name');
+        const productPrice = parseFloat(productElement.getAttribute('data-price'));
+
+        
+        cart.push({ name: productName, price: productPrice });
+
+        
+        updateCart();
+    });
+});

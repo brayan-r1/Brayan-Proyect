@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="main-container">
+        <div class="container">
+            <h1>Publicar Mensaje</h1>
+            <form id="postForm">
+                <input type="text" id="postTitle" placeholder="Título" required>
+                <textarea id="postContent" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+                <input type="file" id="postImage" accept="image/*">
+                <button class="hpla" type="submit">Publicar</button>
+            </form>
+            <div id="postedMessages">
+                <h2>Mensajes Publicados</h2>
+                <ul id="messagesList"></ul>
+            </div>
+        </div>
+    
+    </div>
+    <section>
+        <div class="atras">
+            <button onclick="history.back();">Atrás</button>
+        </div>
+    </section>
+    <div>
+        <a href="index.html">
+            <button>RECRESAR AL INICIO</button>
+        </a>
+    </div>
+</body>
+</html>
